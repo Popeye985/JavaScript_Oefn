@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Begroeten</title>
+    </head>
+    <body>
+    <input type="text" id="getal1">
+    <select id="operator">
+        <option value="plus">+</option>
+        <option value="min">-</option>
+        <option value="maal">*</option>
+        <option value="gedeeld">/</option>
+    </select>
+    <input type="text" id="getal2">
+    <input type="button" id="btn" value="=">
+    <span id= "resultaat"></span>
+    <script>
+        var btn=document.getElementById("button");
+        btn.onclick= Berekenen;
+            var getal1El =parseInt(document.getElementById("getal1"));
+            var getal1 = getal1El.value;
+            var getal2El = parseInt(document.getElementById("getal2"));
+            var getal2 = getal2El.value;
+            var resultaat = document.getElementById("resultaat");
+            var operatorEl = document.getElementById("operator");
+            var operator = operatorEl.value;
+            switch(operator){
+                case "plus": resultaat.textContent = getal1 + getal2;
+                break;
+                case "min": resultaat.textContent = getal1El - getal2El;
+                break;
+                case "maal":resultaat.textContent = getal1 * getal2;
+                break;
+                case "gedeeld": resultaat.textContent = getal1 / getal2;
+                break;
+            }
+
+
+
+    </script>
+    </body>
+    </html>

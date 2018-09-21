@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+<meta charset="UTF-8">
+<title>Value attribute</title>
+</head>
+<body>
+    <h1 id="heading">John</h1>
+    <input type="submit" id="btn1"/>
+    <button id="btn2"></button>
+
+<script>
+    var nieuweTekst = document.getElementById("heading");
+    var btn1El = document.getElementById("btn1");
+    var btn2El = document.getElementById("btn2");
+    btn1El.value= nieuweTekst.textContent;
+    btn2El.textContent = nieuweTekst.textContent;
+    //document.getElementById("btn1").value=nieuweTekst;
+    //document.getElementById("btn2").textContent=nieuweTekst;
+</script>
+</body>
+</html>

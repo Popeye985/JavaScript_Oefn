@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<body>
+<head>
+    <meta charset="UTF-8">
+    <title>Palindroom</title>
+    <script>
+    var tekst = prompt ("Geef een tekst in.");
+    if(isPalindroom(tekst)){
+
+    document.write(tekst + " is een palindroom.")
+    }else{
+        document.write(tekst + " is geen palindroom.");
+    }
+
+    function isPalindroom(tekst){
+        for (var i = 0; i<tekst.length; i++){
+        if (tekst.charAt(i) !== tekst.charAt(tekst.length -i -1)){
+            return false
+        }return true;
+
+        }
+    }
+
+
+
+
+</script>
+</head>
+</body>

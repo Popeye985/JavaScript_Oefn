@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<body>
+<head>
+    <meta charset="UTF-8">
+    <title>Begroeting</title>
+    <script>
+
+
+var email = prompt ("Geef een e-mailadres in.")
+
+
+if (isEmailValid(email)){
+    document.write("Dit e-mailadres is geldig.")
+}else {
+    document.write("Dit e-mailadres is niet geldig.")
+}
+
+function isEmailValid (email){
+var positieAt = email.indexOf ('@');
+var laatstePositieAt = email.lastIndexOf ('@');
+var positieLaatstePunt = email.lastIndexOf('.');
+
+if (positieAt ==-1) {
+  return false;
+}if (positieAt !== laatstePositieAt){
+    return false;
+} if (positieLaatstePunt == -1 || positieLaatstePunt <= positieAt +1){
+    return false;
+}if (email.startsWith('@')){
+    return false;
+}
+return true;
+}
+</script>
+</head>
+</body>

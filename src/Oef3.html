@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<body>
+<head>
+    <meta charset="UTF-8">
+    <title>IBAN</title>
+    <script>
+    var iban = prompt ("Geef een IBAN-nummer in.")
+    if (isIbanGeldig(iban)){
+        document.write(iban + " is een geldig IBAN-nummer.")
+    }else{
+        document.write(iban + " is geen geldig IBAN-nummer.")
+
+    }
+
+function isIbanGeldig(iban){
+
+    if (iban.length !== 19){
+        return false;
+    }
+    if (!iban.startsWith ("BE") ){
+        return false;
+    }
+
+    for (var i =0; i<iban.length; i++){
+        var positieDash1 = iban.charAt(4);
+        if (positieDash1 !== '-' ){
+        return false;
+    }
+    }
+
+    for (var i =0; i<iban.length; i++){
+        var positieDash2 = iban.charAt(9);
+        if (positieDash2 !== '-' ){
+        return false;
+    }
+    }
+
+    for (var i =0; i<iban.length; i++){
+        var positieDash3 = iban.charAt(14);
+        if (positieDash3 !== '-' ){
+        return false;
+}
+}
+
+    for (var i=0; i<iban.length; i++){
+
+    }
+
+    return true;
+
+}
+</script>
+</head>
+</body>

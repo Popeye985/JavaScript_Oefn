@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Begroeten</title>
+    </head>
+    <body>
+        <label>Naam: <input type ="text" id="naam"/></label>
+        <input id="button" type="button" value="Ave"/>
+        <div id="resultaat"></div>
+        <script>
+            var button = document.getElementById("button");
+            button.onclick = clickGegroet();
+            function clickGegroet(){
+                var naamEl = document.getElementById("naam");
+                var naam = naamEl.value;
+                var resultaatEl = document.getElementById("resultaat");
+                var date = new Date();
+                var hour = date.getHours();
+                if(hour <= 12 ){
+                    resultaatEl.innerHTML= "Goedemorgen, " + naam;
+                }else{
+                    resultaatEl.innerHTML= "Goedemiddag, " + naam;
+                }
+            }
+        </script>
+    </body>
+</html>

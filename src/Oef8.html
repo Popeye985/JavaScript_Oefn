@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>Document</title>
+  <script>
+        "use strict";
+        document.addEventListener("DOMContentLoaded", function(){
+        let button = document.getElementById("btn");
+        button.onclick = voegElementToe;
+        });
+        function voegElementToe(){
+            let voornaam = document.getElementById("voornaam").value;
+            let achternaam = document.getElementById("achternaam").value;
+            let resultaatEl = document.getElementById("resultaat");
+            let liElement = document.createElement("li");
+            liElement.textContent = voornaam + " " + achternaam;
+            resultaatEl.appendChild(liElement);
+            //let beforeElement=null;
+            //for (let i= 0; i<resultaatEl.children.length; i++){
+                //let currentElement = resultaatEl.children.item(i);
+                //if (currentElement.textContent > liElement.textContent)
+                //beforeElement = currentElement;
+                //break;
+
+            //}
+        }
+        //resultaatEl.insertBefore(liElement, beforeElement);
+        </script>
+</head>
+<body>
+    <label>Voornaam<input type="text" id="voornaam" name="voornaam"></label>
+    <label>Achternaam<input type="text" id="achternaam" name="achternaam"></label>
+    <button id="btn">Toevoegen</button>
+    <ol id="resultaat"></ol>
+</body>
+</html>

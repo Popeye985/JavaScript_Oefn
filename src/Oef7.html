@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search google</title>
+    <style>
+        .hideerror {
+            display: none;
+        }
+        .showerror {
+            display: block;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form id="frm" action="http://www.google.be/search" method="get">
+        <div><label for="q">Search:</label>
+            <input type="text" name="q" id="q" required/>
+        </div>
+        <div>
+            <label for="lr">Language</label>
+            <select name="lr" id="lr">
+                <option value="">All</option>
+                <option value="lang_fr">French</option>
+                <option value="lang_nl">Dutch</option>
+            </select>
+        </div>
+        <div>
+            <label for="cr">Country</label>
+            <select name="cr" id="cr">
+                <option value="">All</option>
+                <option value="countryFR">France</option>
+                <option value="countryBE">Belgium</option>
+                <option value="countryNL">Netherlands</option>
+            </select>
+        </div>
+        <div id="error" class="hideerror">You cannot search for french pages in the Netherlands</div>
+        <div id="error2" class="hideerror">You cannot search for dutch pages in France</div>
+        <input type="submit" value="submit" />
+    </form>
+    <script>
+    var frm = document.getElementById ("frm");
+    frm.onsubmit=function(){
+        var taalSelecteren = document.getElementById("lr");
+        var landSelecteren = document.getElementById("cr");
+        var foutMelding = document.getElementById("error");
+        var foutMelding2 = document.getElementById("error2");
+        if (taalSelecteren.value === "lang_fr" && landSelecteren.value === "countryNL"){
+            error.classList.add("showerror");
+            error.classList.remove("hideerror")
+            return false;
+
+        }else if (taalSelecteren.value === "lang_nl" && landSelecteren.value === "countryFR"){
+            error2.classList.add("showerror");
+            error2.classList.remove("hideerror");
+            return false;
+        }else{
+            error.classList.remove("showerror");
+            error.classList.add("hideerror");
+        }
+
+    }
+    </script>
+</body>
+</html>
